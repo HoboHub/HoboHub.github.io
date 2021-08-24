@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="header">
+
+        <nav class="header__mnu  js-glitchShow">
+            <ul class="mnu__list">
+                <li class="mnu__item"><a class="mnu__link" href="#">Works</a></li>
+                <li class="mnu__item"><a class="mnu__link" href="#">About</a></li>
+                <li class="mnu__item"><a class="mnu__link" href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="header__text">
+            <div class="header__h  container ex appearing_text">Mihail Salavatov</div>
+            <p class="header__sub  js-glitchShow">Web Developer | Designer</p>
+        </div>
+        
+
+        <div class="scroll-downs" id="js-scroll-downs">
+            <div class="mousey">
+              <div class="scroller"></div>
+            </div>
+          </div>
+
+          <div class="play-btn btn" id="js-play-btn">
+              <div class="sound-wave">
+                  <i class="bar"></i>
+                  <i class="bar"></i>
+                  <i class="bar"></i>
+                  <i class="bar"></i>
+                  <i class="bar"></i>
+                </div>
+          </div>
+    </div>
+
+    <canvas class="webgl" id="js-webgl"></canvas>
+
+    <section></section>
+
+    <!-- <audio id="ambient" controls autoplay> -->
+    <audio id="ambient">
+        <source src="assets/ambient.mp3" type="audio/mp3">
+    </audio>
+
+    <script type="module" src="index.js"></script>
+
+    <!-- <script type="module" src="fadeIn.js"></script> -->
+    <script type="module" src="text_appears.js"></script>
+    <script src="play.js"></script>
+</body>
+</html>
