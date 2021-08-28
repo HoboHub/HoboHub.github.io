@@ -8,8 +8,63 @@
     <title>Document</title>
 </head>
 <body>
+<!-- <body class="scrolloff"> -->
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor cursor js-cursor"></div>
+    <!-- to make cursor grow set to elem class = js-cursor-hover -->
     
-    <div class="header">
+    <div class="well" id="well">
+        <div class="header panel">
+
+            <nav class="header__mnu  js-glitchShow">
+                <ul class="mnu__list">
+                    <li class="mnu__item"><a class="mnu__link js-cursor-hover" name="works">Works</a></li>
+                    <li class="mnu__item"><a class="mnu__link  js-cursor-hover" name="about">About</a></li>
+                    <li class="mnu__item"><a class="mnu__link  js-cursor-hover" name="contact">Contact</a></li>
+                </ul>
+            </nav>
+    
+            <div class="header__text">
+                <div class="header__h  container ex appearing_text   js-cursor-hover">Mihail Salavatov</div>
+                <p class="header__sub  js-glitchShow">Web Developer | Designer</p>
+            </div>
+            
+            <!-- mouse icon on header -->
+            <div class="scroll-downs" id="js-scroll-downs">
+                <div class="mousey">
+                  <div class="scroller"></div>
+                </div>
+            </div>
+            <!--  -->
+    
+              <div class="play-btn btn  js-cursor-hover" id="js-play-btn">
+                  <div class="sound-wave">
+                      <i class="bar"></i>
+                      <i class="bar"></i>
+                      <i class="bar"></i>
+                      <i class="bar"></i>
+                      <i class="bar"></i>
+                    </div>
+              </div>
+        </div>
+    
+        <canvas class="webgl" id="js-webgl"></canvas>
+    
+        <section class="section section__work panel" id="works">
+            <h2 class="section__header">Works</h2>
+        </section>
+    
+        <section class="section section__about panel" id="about">
+            <h2 class="section__header">About me</h2>
+        </section>
+    
+        <section class="section section__contact panel" id="contact">
+            <h2 class="section__header">Contact</h2>
+        </section>
+    </div>
+
+    <!-- <div class="header panel">
 
         <nav class="header__mnu  js-glitchShow">
             <ul class="mnu__list">
@@ -44,7 +99,44 @@
 
     <canvas class="webgl" id="js-webgl"></canvas>
 
-    <section></section>
+    <section class="section section__work panel">
+        <h2 class="section__header">Works</h2>
+    </section>
+
+    <section class="section section__about panel">
+        <h2 class="section__header">About me</h2>
+    </section>
+
+    <section class="section section__contact panel">
+        <h2 class="section__header">Contact</h2>
+    </section> -->
+
+    <!-- Custom Cursor -->
+    <!-- <div class="custom-cursor js-cursor"></div> -->
+    <!-- <main>
+        <section class="section-1 bg-black">
+            <h1 class="js-cursor-hover">
+            Hello world
+        </h1>
+        </section>
+        <section class="section-2">
+            <h1 class="js-cursor-hover">
+            Hello world
+        </h1>
+        </section>
+    </main> -->
+    <!-- <div class="cursor"></div>
+
+    <div class="wrapper">
+        <a class="link" style="--size: 60px">😱</a>
+        <a class="link" style="--size: 80px">😍</a>
+        <a class="link" style="--size: 60px">😱</a>
+    </div>
+    
+    <div class="wrapper">
+        <button class="button">Works with rects, too</button>
+    </div> -->
+    <!--  -->
 
     <!-- <audio id="ambient" controls autoplay> -->
     <audio id="ambient">
@@ -55,6 +147,11 @@
 
     <!-- <script type="module" src="fadeIn.js"></script> -->
     <script type="module" src="text_appears.js"></script>
+
+    <script src="customCursor.js"></script>
+
     <script src="play.js"></script>
+    <!-- <script src="customScroll.js"></script> -->
+    <script type="module" src="anchorLinks.js"></script>
 </body>
 </html>

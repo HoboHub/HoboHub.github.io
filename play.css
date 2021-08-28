@@ -1,13 +1,21 @@
 .play-btn {
     display: block;
-    position: absolute;
+    position: fixed;
+    /* position: absolute; */
     top: 10px;
     left: 10px;
-    border: 1.5px solid lightblue;
+    border: 2px solid lightblue;
     border-radius: 30px;
     padding: 10px;
     /* background-color: grey; */
     z-index: 1200;
+}
+
+.play-btn:hover {
+    border: 2px solid #fff;
+}
+.play-btn:hover > .sound-wave > .bar {
+    background: #fff;
 }
 
 .sound-wave {
@@ -23,7 +31,8 @@
     width: 2px;
     margin-right: 1px;
     height: 10px; /*90px*/
-    background: #7C93BF;
+    background: lightblue;
+    /* background: #7C93BF; */
     animation: sound 0ms -800ms linear infinite alternate;
     transition: height 0.8s;
 }
@@ -45,17 +54,7 @@
 .bar:nth-child(3)  { height: 18px; animation-duration: 407ms; }
 .bar:nth-child(4)  { height: 26px; animation-duration: 458ms; }
 .bar:nth-child(5)  { height: 30px; animation-duration: 400ms; }
-  
-/* .sound-icon:hover {}
 
-.bar {
-     height: 2px;
-     animation-iteration-count: 1;
-     animation-fill-mode: backwards;
-} */
-
-/* .play-btn:hover > .sound-wave > .bar { */
-    /* height: 2px; */
-    /* animation-iteration-count: 1; */
-    /* animation-fill-mode: backwards;   */
+/* .play-btn:hover { */
+    /* cursor: pointer; */
 /* } */

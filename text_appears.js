@@ -40,7 +40,10 @@ for (var i = 0; i < appearingTexts.length; i++) {
       let canvas = document.getElementById('js-webgl');
       // canvas.classList.add('visible');
       fadeIn(canvas, 0.009, 0.01);
-      setTimeout(()=> {scale(canvas);}, 50)
+
+      // setTimeout(()=> {scale(canvas);}, 50); //---
+
+      // canvas.style.height = '350px';
       // scale(canvas);
       // canvas.classList.add('scale');
 
@@ -52,22 +55,47 @@ for (var i = 0; i < appearingTexts.length; i++) {
       }, 2500);
 
       //text glitch appearance
-      let glitches = document.getElementsByClassName('js-glitchShow');
-      let glitchTime = new Date().getTime();
-      // console.log(glitchTime);
-      for (let i=0; i< glitches.length; i++) {
-
-        let timer = setInterval(() => {
-          if(Date.now()-glitchTime >= 1500 ) {
-
-            clearInterval(timer);
-
-          };
-
-          glitchShow(glitches[i]);
-        }, 250);
-
+      function glitching() {
+        let glitches = document.getElementsByClassName('js-glitchShow');
+        let glitchTime = new Date().getTime();
+        // console.log(glitchTime);
+        for (let i=0; i< glitches.length; i++) {
+  
+          let timer = setInterval(() => {
+            if(Date.now()-glitchTime >= 1500 ) {
+  
+              clearInterval(timer);
+  
+            };
+  
+            glitchShow(glitches[i]);
+          }, 250);
+  
+        }
       }
+      glitching();
+      // setTimeout(glitching(), 1000);
+      // let glitches = document.getElementsByClassName('js-glitchShow');
+      // let glitchTime = new Date().getTime();
+      // // console.log(glitchTime);
+      // for (let i=0; i< glitches.length; i++) {
+
+      //   let timer = setInterval(() => {
+      //     if(Date.now()-glitchTime >= 1500 ) {
+
+      //       clearInterval(timer);
+
+      //     };
+
+      //     glitchShow(glitches[i]);
+      //   }, 250);
+
+      // }
+
+      //unblock page scroll on load
+      setTimeout(() => {
+        document.body.classList.remove('scrolloff');
+      }, 1000);
 
     }
   }

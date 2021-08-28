@@ -25,14 +25,17 @@ const loader = new GLTFLoader()
 
 const clock2 = new THREE.Clock()
 
-let mixer
+let mixer;
 
-var blackhole
+var blackhole;
 
 loader.load('./assets/blackhole/scene.gltf', (gltf) => {
     blackhole = gltf.scene
     blackhole.children[0].rotation.y += -0.25
     blackhole.children[0].position.x = 60; //50
+    blackhole.children[0].position.y += 20;
+    // blackhole.children[0].scale.set(1.3, 1.3, 1.3);
+    // blackhole.scale.set(0.005, 0.005, THREE.MathUtils.lerp(0.01, 0.5, amount));
     // const blackhole = gltf.scene
     mixer = new THREE.AnimationMixer(blackhole) // animation line #1
     mixer.timeScale = 0.1 // set speed of animation
@@ -132,18 +135,26 @@ camera.position.y = 0.5 //0.2
 camera.position.z = 2.5 //2.5
 scene.add(camera)
 
+//CAMERA ZOOM
+// camera.fov *= 2;
+let cameraSetTime = new Date().getTime();
+let cameraZoomTimer = setInterval(() => {
+    
+    if (Date.now()-cameraSetTime >= 17000) {
+        clearInterval(cameraZoomTimer);
+    }
+    // camera.fov *= 2;
+    // camera.position.x = 0;
+    // camera.position.y = 0.5;
+    camera.position.z -= 0.002; //2.5;
+    // camera.position.z -= 1;
+    camera.updateProjectionMatrix();
+}, 50);
+// camera.updateProjectionMatrix();
 
-/** 
-Controls (enable to rotate window)
-**/
-const controls = new OrbitControls(camera, canvas)
-// controls.target.set(0, 0, 1);
-controls.enableDamping = true
+// (position.x, position.y - distance, position.z)
 
-//ограничения масштабирования
-controls.minDistance = 1.8
-controls.maxDistance = 3.5
-//---
+
 
 //Renderer
 
@@ -162,33 +173,55 @@ renderer.outputEncoding = THREE.sRGBEncoding
 
 // renderer.render(scene, camera)
 
+
+/** 
+Controls (enable to rotate window)
+**/
+// const controls = new OrbitControls(camera, blackhole)
+// const controls = new OrbitControls(camera, renderer.domElement) 
+
+// const controls = new OrbitControls(camera, canvas) //---
+
+// controls.target.set(0, 0, 1);
+// controls.enableDamping = true //--
+
+//zoom speed
+// controls.enablePan = true;
+// controls.keyPanSpeed = 0.05;
+
+//ограничения масштабирования
+// controls.minDistance = 1.8 //--
+// controls.maxDistance = 3.5 //--
+//---
+
+
 /**
  * Animate
  */
 
-// анимация при движении мыши
- document.addEventListener('mousemove', onDocumentMouseMove)
+// анимация при движении мыши (paralax)
+document.addEventListener('mousemove', onDocumentMouseMove)
 
- let mouseX = 0
- let mouseY = 0
+let mouseX = 0
+let mouseY = 0
+
+let targetX = 0
+let targetY = 0
+
+const windowHalfX = window.innerWidth / 2
+const windowHalfY = window.innerHeight / 2
+
+function onDocumentMouseMove(event) {
+    mouseX = (event.clientX - windowHalfX)
+    mouseY = (event.clientY - windowHalfY)
+}
  
- let targetX = 0
- let targetY = 0
  
- const windowHalfX = window.innerWidth / 2
- const windowHalfY = window.innerHeight / 2
+const updateSphere = (event) => {
+    blackhole.position.y = window.scrollY * .001
+}
  
- function onDocumentMouseMove(event) {
-     mouseX = (event.clientX - windowHalfX)
-     mouseY = (event.clientY - windowHalfY)
- }
- 
- //
-//  const updateSphere = (event) => {
-//      sphere.position.y = window.scrollY * .001
-//  }
- 
-//  window.addEventListener('scroll', updateSphere)
+ window.addEventListener('scroll', updateSphere)
  //--------------
 
 
@@ -196,26 +229,26 @@ renderer.outputEncoding = THREE.sRGBEncoding
 
  const tick = () =>
  {
-     //
-    //  targetX = mouseX * .001 ///--
-    //  targetY = mouseY * .001 //--
-     //
+     
+     targetX = mouseX * .001 ///--
+     targetY = mouseY * .001 //--
+     
      
      const elapsedTime = clock.getElapsedTime()
 
     // Update objects
-    // sphere.rotation.y = .5 * elapsedTime //--
+    // blackhole.rotation.y = .5 * elapsedTime //--
 
-    // sphere.rotation.y += .5 * (targetX - sphere.rotation.y) //---
-    // sphere.rotation.x += .05 * (targetY - sphere.rotation.x) ///--
-    // sphere.position.z += -.05 * (targetY - sphere.rotation.x) //--
-    //
+    // blackhole.rotation.y += .5 * (targetX - blackhole.rotation.y) //---
+    // blackhole.rotation.x += .05 * (targetY - blackhole.rotation.x) ///--
+    //blackhole.position.z += -.05 * (targetY - blackhole.rotation.x) //--
+    
  
      // Update objects
     //  box.rotation.y = .5 * elapsedTime
  
      // Update Orbital Controls
-     controls.update()
+    //  controls.update() //----------
  
      // Render
      renderer.render(scene, camera)
