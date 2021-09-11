@@ -1,17 +1,19 @@
 const customCursor = (e) => {
     const cursor = document.querySelector('.js-cursor');
     const hoverEl = document.querySelectorAll('.js-cursor-hover')
+    const hoverLink = document.querySelectorAll('.js-cursor-hover-link');
+    const hoverDownload = document.querySelectorAll('.js-cursor-hover-download');
     const { pageX: posX, pageY: posY } = e;
 
+    //MAIN--------
     const runMouseOver = () => {
         cursor.style.transform = 'scale(3.5)';
-        
-        // cursor.style.background = "lightblue";
-        // cursor.style.background = "#0000FF";
+        // cursor.style.background = "#fe6601";
+        cursor.style.background = "rgba(52, 31, 255, 1)";
 
-        cursor.style.background = "orange";
 
-        // cursor.style.background = "#F26419";
+        // cursor.style.background = "orange";
+        cursor.style.mixBlendMode = "difference";
     };
     hoverEl.forEach(hover => hover.addEventListener('mouseenter', runMouseOver));
     
@@ -21,126 +23,52 @@ const customCursor = (e) => {
     };
     hoverEl.forEach(hover => hover.addEventListener('mouseleave', runMouseLeave));
 
+    //LINK-------
+    const runMouseOverLink = () => {
+        cursor.style.transform = 'scale(3.5)';
+        // cursor.style.background = "#fe6601";
+        cursor.style.background = "rgba(52, 31, 255, 1)";
+
+        cursor.style.mixBlendMode = "normal";
+        document.getElementById('right-arrow-cursor').style.display = 'block';
+        // cursor.style.backgroundImage = "url('./assets/icons/right-arrow.svg')";
+    };
+    hoverLink.forEach(hover => hover.addEventListener('mouseenter', runMouseOverLink));
+    
+    const runMouseLeaveLink = () => {
+        cursor.style.transform = '';
+        cursor.style.background = '';
+        document.getElementById('right-arrow-cursor').style.display = 'none';
+    };
+    hoverLink.forEach(hover => hover.addEventListener('mouseleave', runMouseLeaveLink));
+
+    //DOWNLOAD-----
+    // js-cursor-hover-download
+    // hoverDownload
+    const runMouseOverDownload = () => {
+        cursor.style.transform = 'scale(5)';
+        // cursor.style.background = "#fe6601";
+        cursor.style.background = "rgba(52, 31, 255, 1)";
+
+        cursor.style.mixBlendMode = "normal";
+        // document.getElementById('file-cursor').style.transform = 'rotate(90deg)';
+        document.getElementById('file-cursor').style.display = 'block';
+        // cursor.style.backgroundImage = "url('./assets/icons/right-arrow.svg')";
+    };
+    hoverDownload.forEach(hover => hover.addEventListener('mouseenter', runMouseOverDownload));
+    
+    const runMouseLeaveDownload = () => {
+        cursor.style.transform = '';
+        cursor.style.background = '';
+        document.getElementById('file-cursor').style.display = 'none';
+    };
+    hoverDownload.forEach(hover => hover.addEventListener('mouseleave', runMouseLeaveDownload));
+
     return (
         cursor.style.left = `${posX - 10}px`,
         cursor.style.top = `${posY - 10}px`  
     );
+
 };
   
-document.addEventListener('mousemove', customCursor); 
-
-// `use strict`;
-// const updateProperties = (elem, state) => {
-
-// 	elem.style.setProperty('--x', `${ state.x }px`)
-// 	elem.style.setProperty('--y', `${ state.y }px`)
-// 	elem.style.setProperty('--width', `${ state.width }px`)
-// 	elem.style.setProperty('--height', `${ state.height }px`)
-// 	elem.style.setProperty('--radius', state.radius)
-// 	elem.style.setProperty('--scale', state.scale)
-
-// }
-
-// document.querySelectorAll('.cursor').forEach((cursor) => {
-
-// 	let onElement
-
-// 	const createState = (e) => {
-		
-// 		const defaultState = {
-// 			x: e.clientX,
-// 			y: e.clientY,
-// 			width: 42,
-// 			height: 42,
-// 			radius: '100px'
-// 		}
-
-// 		const computedState = {}
-		
-// 		if (onElement != null) {
-// 			const { top, left, width, height } = onElement.getBoundingClientRect()
-// 			const radius = window.getComputedStyle(onElement).borderTopLeftRadius
-			
-// 			computedState.x = left + width / 2
-// 			computedState.y = top + height / 2
-// 			computedState.width = width
-// 			computedState.height = height
-// 			computedState.radius = radius
-// 		}
-
-// 		return {
-// 			...defaultState,
-// 			...computedState
-// 		}
-
-// 	}
-
-// 	document.addEventListener('mousemove', (e) => {
-// 		const state = createState(e)
-// 		updateProperties(cursor, state)
-// 	})
-
-// 	document.querySelectorAll('a, button').forEach((elem) => {
-// 		elem.addEventListener('mouseenter', () => onElement = elem)
-// 		elem.addEventListener('mouseleave', () => onElement = undefined)
-// 	})
-
-// })
-
-// `use strict`;
-// const updateProperties = (elem, state) => {
-
-// 	elem.style.setProperty('--x', `${ state.x }px`)
-// 	elem.style.setProperty('--y', `${ state.y }px`)
-// 	elem.style.setProperty('--width', `${ state.width }px`)
-// 	elem.style.setProperty('--height', `${ state.height }px`)
-// 	elem.style.setProperty('--radius', state.radius)
-// 	elem.style.setProperty('--scale', state.scale)
-
-// }
-
-// document.querySelectorAll('.cursor').forEach((cursor) => {
-
-// 	let onElement
-
-// 	const createState = (e) => {
-		
-// 		const defaultState = {
-// 			x: e.clientX,
-// 			y: e.clientY,
-// 			width: 42,
-// 			height: 42,
-// 			radius: '100px'
-// 		}
-
-// 		const computedState = {}
-		
-// 		if (onElement != null) {
-// 			const { top, left, width, height } = onElement.getBoundingClientRect()
-// 			const radius = window.getComputedStyle(onElement).borderTopLeftRadius
-			
-// 			computedState.x = left + width / 2
-// 			computedState.y = top + height / 2
-// 			computedState.width = width
-// 			computedState.height = height
-// 			computedState.radius = radius
-// 		}
-
-// 		return {
-// 			...defaultState,
-// 			...computedState
-// 		}
-
-// 	}
-
-// 	document.addEventListener('mousemove', (e) => {
-// 		const state = createState(e)
-// 		updateProperties(cursor, state)
-// 	})
-
-// 	document.querySelectorAll('a, button').forEach((elem) => {
-// 		elem.addEventListener('mouseenter', () => onElement = elem)
-// 		elem.addEventListener('mouseleave', () => onElement = undefined)
-// 	})
-
-// })
+document.addEventListener('mousemove', customCursor);

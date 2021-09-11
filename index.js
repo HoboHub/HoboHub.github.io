@@ -6,6 +6,13 @@ import { OrbitControls } from './lib/OrbitControls.js'
 // import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.118/examples/jsm/controls/OrbitControls.js'
 import { RGBELoader } from 'https://cdn.jsdelivr.net/npm/three@0.114/examples/jsm/loaders/RGBELoader.js';
 
+//ABOUT image 3d change
+import ImageScene from './imageChange/imageScene.js'
+
+window.scene = new ImageScene()
+
+//---
+
 //canvas
 const canvas = document.querySelector('canvas.webgl')
 
@@ -38,9 +45,16 @@ loader.load('./assets/blackhole/scene.gltf', (gltf) => {
     // blackhole.scale.set(0.005, 0.005, THREE.MathUtils.lerp(0.01, 0.5, amount));
     // const blackhole = gltf.scene
     mixer = new THREE.AnimationMixer(blackhole) // animation line #1
-    mixer.timeScale = 0.1 // set speed of animation
+    mixer.timeScale = 0.04 // set speed of animation
+    // mixer.timeScale = 0.1 // set speed of animation
     mixer.clipAction(gltf.animations[0]).play() // anim line #2
+
+    //changing canvas size to blackhole be seamless on the page
+    // blackhole.scale.set(0.008, 0.008, 0.008)
+    // blackhole.children[0].position.y += 80;
+    //
     blackhole.scale.set(0.01, 0.01, 0.01)
+
     //add to scene
     scene.add(blackhole) //-----
 }, function(xhr){
@@ -49,6 +63,26 @@ loader.load('./assets/blackhole/scene.gltf', (gltf) => {
     console.log('Error found')
 })
 
+
+//GLOW SHADER --
+// clone for manipulation
+// let geoclone = blackhole.clone();
+
+
+// //Thes functions are need to make it work in this case
+// geoclone.mergeVertices();
+// //geoclone.computeCentroids();
+// geoclone.computeVertexNormals();
+// geoclone.computeFaceNormals();
+
+// // part of threex library to make the glow scale and expand
+// THREEx.dilateGeometry(geoclone, 0.5);
+// let materialz   = THREEx.createAtmosphereMaterial();
+// let meshHalo    = new THREE.Mesh(geoclone, materialz );
+
+// //we have now our glow
+// scene.add( meshHalo );
+//----------------------
 
 ////background loader
 
@@ -108,14 +142,16 @@ scene.add(light)
 //sizes
 const sizes = {
     width: window.innerWidth,
-    height: window.innerHeight
+    // height: window.innerHeight  //---
+    height: window.innerHeight + 200  //--- высота canvasa (добавил 200px чтобы черная дыра не выходила за край) --!! 
 }
 
+//resize
 window.addEventListener('resize', () =>
 {
     // Update sizes
     sizes.width = window.innerWidth
-    sizes.height = window.innerHeight
+    sizes.height = window.innerHeight + 200 // высота canvasa (добавил 200px чтобы черная дыра не выходила за край)
 
     // Update camera
     camera.aspect = sizes.width / sizes.height
@@ -132,7 +168,9 @@ window.addEventListener('resize', () =>
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
 camera.position.x = 0 //0
 camera.position.y = 0.5 //0.2
-camera.position.z = 2.5 //2.5
+// camera.position.z = 2.5 //2.5
+camera.position.z = 3 //2.5
+
 scene.add(camera)
 
 //CAMERA ZOOM
