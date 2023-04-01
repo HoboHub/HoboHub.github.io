@@ -636,7 +636,7 @@ button {
 .about__photo_wrapper {
   border-radius: 10px;
   position: relative;
-  height: 550px;
+  height: 400px;
   overflow: hidden;
 }
 
