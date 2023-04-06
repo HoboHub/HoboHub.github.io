@@ -1,0 +1,25 @@
+.slowpoke {
+  position: relative;
+  background-color: #e3f1f5;
+  width: 40%;
+  height: 200px;
+  border-radius: 10px;
+  left: 25%; }
+  .slowpoke img {
+    position: absolute;
+    bottom: 0;
+    right: 0; }
+
+.psyduck {
+  position: relative;
+  width: 40%;
+  height: 180px;
+  border-radius: 10px;
+  left: 25%;
+  margin-top: 10px;
+  overflow: hidden; }
+  .psyduck img {
+    position: absolute;
+    bottom: 0;
+    width: 120%;
+    left: 0; }
