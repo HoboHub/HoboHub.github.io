@@ -1,5 +1,6 @@
 import * as THREE from '../lib/three.module.js'
-import { gsap } from '../node_modules/gsap/all.js'
+// import { gsap } from '../node_modules/gsap/all.js'
+import { gsap } from 'gsap/all.js'
 
 export default class Figure {
     constructor(scene) {
