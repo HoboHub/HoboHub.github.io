@@ -1,177 +1,792 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
-<body>
-<!-- <body class="scrolloff"> -->
+  </head>
+  <body>
+    <!-- <body class="scrolloff"> -->
 
     <!-- Custom Cursor -->
     <div class="custom-cursor cursor js-cursor">
-        <svg class="icon  cursor__img" id="right-arrow-cursor">
-            <use xlink:href="#right-chevron"></use>
-        </svg>
-        
-        <svg class="icon cursor__file-img" id="file-cursor">
-            <use xlink:href="#files"></use>
-        </svg>
-        <!-- <svg class="icon cursor__img" id="right-arrow-cursor">
+      <svg class="icon cursor__img" id="right-arrow-cursor">
+        <use xlink:href="#right-chevron"></use>
+      </svg>
+
+      <svg class="icon cursor__file-img" id="file-cursor">
+        <use xlink:href="#files"></use>
+      </svg>
+      <!-- <svg class="icon cursor__img" id="right-arrow-cursor">
             <use xlink:href="#right-arrow"></use>
         </svg> -->
     </div>
     <!-- to make cursor grow set to elem class = js-cursor-hover -->
-    
+
     <div class="well" id="well">
-        <div class="header panel">
+      <div class="header panel">
+        <nav class="header__mnu js-glitchShow">
+          <ul class="mnu__list">
+            <li class="mnu__item">
+              <a class="mnu__link js-cursor-hover" name="works">Works</a>
+            </li>
+            <li class="mnu__item">
+              <a class="mnu__link js-cursor-hover" name="about">About</a>
+            </li>
+            <li class="mnu__item">
+              <a class="mnu__link js-cursor-hover" name="contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
 
-            <nav class="header__mnu  js-glitchShow">
-                <ul class="mnu__list">
-                    <li class="mnu__item"><a class="mnu__link js-cursor-hover" name="works">Works</a></li>
-                    <li class="mnu__item"><a class="mnu__link  js-cursor-hover" name="about">About</a></li>
-                    <li class="mnu__item"><a class="mnu__link  js-cursor-hover" name="contact">Contact</a></li>
-                </ul>
-            </nav>
-    
-            <div class="header__text">
-                <div class="header__h  container ex appearing_text   js-cursor-hover">Mihail Salavatov</div>
-                <p class="header__sub  js-glitchShow">Web Developer | Designer</p>
+        <div class="header__content">
+          <div class="header__text">
+            <div class="header__h container ex appearing_text js-cursor-hover">
+              Mihail Salavatov
             </div>
-            
-            <!-- mouse icon on header -->
-            <div class="scroll-downs" id="js-scroll-downs">
-                <div class="mousey">
-                  <div class="scroller"></div>
-                </div>
-            </div>
-            <!--  -->
-    
-              <div class="play-btn btn  js-cursor-hover" id="js-play-btn">
-                  <div class="sound-wave">
-                      <i class="bar"></i>
-                      <i class="bar"></i>
-                      <i class="bar"></i>
-                      <i class="bar"></i>
-                      <i class="bar"></i>
-                    </div>
-              </div>
+            <p class="header__sub js-glitchShow">Web Developer | Designer</p>
+          </div>
+
+          <figure class="header__content_gif">
+            <img src="assets/images/space.gif" alt="space" />
+            <!-- <figcaption>Созвездия</figcaption> -->
+          </figure>
         </div>
-    
-        <canvas class="webgl" id="js-webgl"></canvas>
-    
-        <section class="section section__work panel" id="works">
-            <h2 class="section__header">Works</h2>
-        </section>
-    
-        <section class="section section__about panel" id="about">
-            <!-- <h2 class="section__header">About me</h2> -->
-            <div class="about__bg">ABOUT ABOUT ABOUT ABOUT</div>
-            <div class="about__content">
 
-                <article class="tile">
-                    <figure class="tile__figure">
-                        <img src="assets/me.jpeg" data-hover="assets/me.jpeg" class="tile__image" alt="Me"/>
-                    </figure>
-                </article>
-                <canvas id="stage" class="js-cursor-hover"></canvas>
+        <!-- mouse icon on header -->
+        <div class="scroll-downs" id="js-scroll-downs">
+          <div class="mousey">
+            <div class="scroller"></div>
+          </div>
+        </div>
+        <!--  -->
 
-                <!-- <div class="about__image   js-cursor-hover">
+        <div class="play-btn btn js-cursor-hover" id="js-play-btn">
+          <div class="sound-wave">
+            <i class="bar"></i>
+            <i class="bar"></i>
+            <i class="bar"></i>
+            <i class="bar"></i>
+            <i class="bar"></i>
+          </div>
+        </div>
+      </div>
+
+      <canvas class="webgl" id="js-webgl"></canvas>
+
+      <section class="section section__work panel" id="works">
+        <h2 class="section__header">Works</h2>
+        <div class="works__content">
+          <!--  -->
+          <!-- <div class="folder" onclick="toggleLinks('project-links')">
+            <div class="folder-name js-cursor-hover">Проекты</div>
+            <ul id="project-links" class="links">
+              <li>
+                <a href="" target="_blank">Проект 1</a>
+              </li>
+              <li>
+                <a href="" target="_blank">Проект 2</a>
+              </li>
+              <li>
+                <a href="" target="_blank">Проект 3</a>
+              </li>
+            </ul>
+          </div> -->
+          <!--  -->
+
+          <!-- 1 year -->
+          <div class="folder js-cursor-hover" data-id="1-year">
+            <!-- <p>📁 1 курс</p> -->
+            <p>
+              <svg width="24" height="24"><use href="#folder" /></svg>
+              <!-- <svg width="24" height="24"><use href="#document" /></svg>  -->
+              1 курс
+            </p>
+            <ul id="1-year" class="links" style="display: none">
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1lG13sXM_VVxTgRoaol3t8M98NJtPmsVi?usp=sharing "
+                  target="_blank"
+                  >Аналитическая геометрия</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1AQk6VectX5cH4YvSSd0J7Vw5kLuqHkda?usp=sharing "
+                  target="_blank"
+                  >Английский</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/17cIrzonUdOUlvwBILGpZCqbexsGz9oWV?usp=sharing "
+                  target="_blank"
+                  >Информатика</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1Ikperu4KBGzfAo6-KUgc-moPa8toTgvF?usp=sharing "
+                  target="_blank"
+                  >Информатика в математике</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1_aX0ZUUFwYlBGRN2oPAjkxpwum18mehO?usp=sharing "
+                  target="_blank"
+                  >Информатика в физике</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1Ju2Qm2tK5hQjOjmr47CLLgG-XMhT9HMg?usp=sharing "
+                  target="_blank"
+                  >История</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1NSeGJrptsrBwD-y4ffOkFWuVKJ4oA-01?usp=sharing "
+                  target="_blank"
+                  >ИТ (инф технологии)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1IH97EpKJgZXm4TlkD_QmwvmU7Y1nqs3Z?usp=sharing "
+                  target="_blank"
+                  >ЛАТМ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/10UESwiMA2UI980NjcdTtyXu46tq8_GaT?usp=sharing "
+                  target="_blank"
+                  >Мат анализ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1KVbPOp0kRpG3RL22f5bn_dTrp0Fw-mkz?usp=sharing "
+                  target="_blank"
+                  >ОКА</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1geFT1jtzLhz6Uc7gA29qt3nA3FCIpI2I?usp=sharing "
+                  target="_blank"
+                  >Практика (1 курс)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1PmqBcBjSLZW5eFhr7F8i31ppj7Degt5Y?usp=sharing "
+                  target="_blank"
+                  >Программирование (СИ)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/11eSiCS40mDHytLjATdGzxebeZ4mPmpr_?usp=sharing "
+                  target="_blank"
+                  >Физика</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1jr0rYE16SqyQDAoS16VVjjpMhbotgThJ?usp=sharing "
+                  target="_blank"
+                  >Физ-ра</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1LNH5tJNIrE6hqsT0p-uyurJWd0ZQQPUc?usp=sharing "
+                  target="_blank"
+                  >Философия</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1vu8c-ahO8MbdkSiRSEHpyaCJso4MsAg7?usp=sharing "
+                  target="_blank"
+                  >Экономика</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- 2 year -->
+          <div class="folder js-cursor-hover" data-id="2-year">
+            <p>
+              <svg width="24" height="24"><use href="#folder" /></svg> 2 курс
+            </p>
+            <!-- <p>📁 2 курс</p> -->
+            <ul id="2-year" class="links" style="display: none">
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1UoxI7VSs78rUwS8gG0gZwbhQcuPzbkkw?usp=sharing "
+                  target="_blank"
+                  >Анализ данных</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1NK12mdtLFRULB1Bvrr-YWLVJpbXxLARZ?usp=sharing "
+                  target="_blank"
+                  >БД</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1XMzCv80UxMcT-Y6MgYFzS3KBRDsW_SdQ?usp=sharing "
+                  target="_blank"
+                  >Веб-проектирование</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1RFfpGJNAdV7KheS5-jHnrcSkYIpSSK2F?usp=sharing "
+                  target="_blank"
+                  >Вычислительная техника</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1Zd9QG-aqzz08KU3n6z-XdCVhaTAH8tCa?usp=sharing "
+                  target="_blank"
+                  >Иностранный язык</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/14teABKRWEykYyTcRMaf7UpLnMl7TrH_1?usp=sharing "
+                  target="_blank"
+                  >КП (компьютерный практикум)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1NaTI7FahvD5RMarYVd9nRImnoASqocOC?usp=sharing "
+                  target="_blank"
+                  >ОС</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1ytdd-25mWieXYUS-TgJeCDTrNYkHQq5X?usp=sharing "
+                  target="_blank"
+                  >ПРОГ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1xW8TmuNybMqCGvFiBs1-Bprr0tsnODVt?usp=sharing "
+                  target="_blank"
+                  >ТКМ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1e8w-cQ30va0bFmLtIfKeGn6ftGKhM_LG?usp=sharing "
+                  target="_blank"
+                  >Учебная практика (проектно-технологическая)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1i19eJAWx1JAzZvqPIfV6TXX8SYq9JDlB?usp=sharing "
+                  target="_blank"
+                  >Физ-ра</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1MnIC3v0mdiaLRiavl3J4I2xdAo0JaAeL?usp=sharing "
+                  target="_blank"
+                  >Физика</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- 3 year -->
+          <div class="folder js-cursor-hover" data-id="3-year">
+            <p>
+              <svg width="24" height="24"><use href="#folder" /></svg> 3 курс
+            </p>
+            <!-- <p>📁 3 курс</p> -->
+            <!-- <div id="3-year" class="folder js-cursor-hover" data-id="5-sem">
+              <p>📁 5 семестр</p>
+            </div> -->
+            <!-- <ul id="5-sem" class="links" style="display: none"> -->
+            <ul id="3-year" class="links" style="display: none">
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1DPxwag1FL486TUvf-rlDhuIppTsuTikJ?usp=sharing "
+                  target="_blank"
+                  >Англ 5 семестр</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1bOyFh0-NFrjeNzCQ6p76GfdnQyacGjPo?usp=sharing "
+                  target="_blank"
+                  >ИТ в иностранном языке</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1SodtlfXbcr3PVX2IRsw0vLNIAmA7P6Im?usp=sharing "
+                  target="_blank"
+                  >Компьютерная графика</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1YeeaYNE4QlqPCWS8hnyUtCzeS3DD-p50?usp=sharing "
+                  target="_blank"
+                  >Математические основы компьютерной графики</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1u93evcQZzk6MqHv_ye54L1gJgP9ByzVm?usp=sharing "
+                  target="_blank"
+                  >Основы бизнес-информатики</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/15n4aMwSKHgsUbiGFBO1Vn3JYXTqmaqDY?usp=sharing "
+                  target="_blank"
+                  >Пакеты Прикладных Программ для стат. обработки</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1sULSL7MHp2hecpiJEt9jm7TstX7RCULk?usp=sharing "
+                  target="_blank"
+                  >Представление и публикация информации</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1nErYKbnC1b87WKV7Vxa6igJlbKWhX-1g?usp=sharing "
+                  target="_blank"
+                  >ПРОГ-5</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1GOX8XSwf4zCU1PtJhh72ETAdl5sQzYxf?usp=sharing "
+                  target="_blank"
+                  >Сети и телеком</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1b52wxQAcjqsrHAlyirLQrrQIbglAHJXh?usp=sharing "
+                  target="_blank"
+                  >СиТП Техническая и издательская документация</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1l0qFPcbsBdkDI8jATKpovVoeUrWcYHKh?usp=sharing "
+                  target="_blank"
+                  >IT-менеджмент</a
+                >
+              </li>
+
+              <!--  -->
+              <!--  -->
+              <!--  -->
+              <!--  -->
+              <!--  -->
+              <!--  -->
+              <!--  -->
+              <!--  -->
+              <!-- 6 sem -->
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1MewMepQZYHhPAcKyRSdThJBt4TjyS0E_?usp=sharing "
+                  target="_blank"
+                  >Англ 6 семестр</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1Rb1pv4esYyBQ6kfktT6dIu2e45owP54T?usp=sharing "
+                  target="_blank"
+                  >Защита информации</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/13xyd5fXvNiuPreQM85kej2ahHFOsrQPm?usp=sharing "
+                  target="_blank"
+                  >ИТ и бизнес-аналитика</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1PwEs1Zv2zA5Jx5Oimn3pekzveOsLRloj?usp=sharing "
+                  target="_blank"
+                  >Мат основы глубокого обучения</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/16wxddk831RfZ5UR0bwRZPmYDEBeyZbh8?usp=sharing "
+                  target="_blank"
+                  >Основы корпоративного электронного обучения</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1iF1HxjU6XQReENm1W94wC0hFFg5cuWGt?usp=sharing "
+                  target="_blank"
+                  >Основы машинного обучения</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1O6wpU0JhKunoW6poGJq0u3YHq0WQC6bp?usp=sharing "
+                  target="_blank"
+                  >Основы электронного управления</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1QOiWXTD0IB1T2l8SwDjCPDjXul0VOfVY?usp=sharing "
+                  target="_blank"
+                  >ПИТ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1ItXr-QfHm-SgWYg6FbnOYluVaC6ocrPJ?usp=sharing "
+                  target="_blank"
+                  >ПРОГ-6</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1imPdD2NUZuuv5gflTfN8nrMilzZoRKXp?usp=sharing "
+                  target="_blank"
+                  >Профессиональный ориентированный перевод</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1WHgUyQODItex7NE50qnpLq7Dgm_CtsY4?usp=sharing "
+                  target="_blank"
+                  >Технологии визуализации данных</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- 4 year -->
+          <div class="folder js-cursor-hover" data-id="4-year">
+            <p>
+              <svg width="24" height="24"><use href="#folder" /></svg> 4 курс
+            </p>
+            <!-- <p>📁 4 курс</p> -->
+            <ul id="4-year" class="links" style="display: none">
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1EbrYYLpyiyol5yMv6cZG9RCidnivVZLr?usp=sharing "
+                  target="_blank"
+                  >Англ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1tyc6q5diQP-DHhjUTITHwJ-xC0ikR4D4?usp=sharing "
+                  target="_blank"
+                  >Инженерия знаний</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1cSyne0JCE18H_3ZOD0_a71ImOJ1jOGnf?usp=sharing "
+                  target="_blank"
+                  >Курсовая - Портфолио</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/17kMOBCTzG9yUTCv9Qx-2cYM1Za5pyfyJ?usp=sharing "
+                  target="_blank"
+                  >ПРАКТИКА</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1hbvNZ55g_wUosagomPx5XEfhMKJR5CrO?usp=sharing "
+                  target="_blank"
+                  >ПРОГ-7</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1gXOhXQ-JRG0cYjKwt_SFb-3rSdh5cE1W?usp=sharing "
+                  target="_blank"
+                  >УПП</a
+                >
+              </li>
+
+              <!--  -->
+              <!--  -->
+              <!--  -->
+              <!-- 8 sem -->
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1M3B8EY3x9TX18AW_ayrsF9crd2Odcm_I?usp=sharing "
+                  target="_blank"
+                  >Инф. среды и тех. инж. и науч. расчетов</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1hq9OtnTtHoPSNLaT2cJr8LwFdcPWfNU0?usp=sharing "
+                  target="_blank"
+                  >Научно-исследовательский проект</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1yYFiySM4u0dKUjfH-FCFspyDPVwThOqv?usp=sharing "
+                  target="_blank"
+                  >СПВИИТ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1dW0GL5QMLXxDt-GrBhcvAqPfG3KGrTkN?usp=sharing "
+                  target="_blank"
+                  >Язык написания спецификации</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1-QRXLCkr3XdnxwCUAdQsvj6hOIQLPGOa?usp=sharing "
+                  target="_blank"
+                  >МИРЦБ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1eX0ZnO_zytvWP3ialSgXs46VYz27bzlK?usp=sharing "
+                  target="_blank"
+                  >Оценка персонала</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://drive.google.com/drive/folders/1bA-kklI_Eksh6DMPvXIF_OX2uJlBksLn?usp=sharing "
+                  target="_blank"
+                  >IT-рекрутмент</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://git.herzen.spb.ru/212006/final_practice_2025 "
+                  target="_blank"
+                  >ДИПЛОМ - практика</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- <div class="folder" data-id="cert-links">
+            <p>📄 Сертификаты</p>
+            <ul id="cert-links" class="links" style="display: none">
+              <li>
+                <a href="https://drive.google.com/file/d/... " target="_blank"
+                  >Сертификат 1</a
+                >
+              </li>
+              <li>
+                <a href="https://drive.google.com/file/d/... " target="_blank"
+                  >Сертификат 2</a
+                >
+              </li>
+            </ul>
+          </div> -->
+          <!--  -->
+        </div>
+      </section>
+
+      <section class="section section__about panel" id="about">
+        <!-- <h2 class="section__header">About me</h2> -->
+        <div class="about__bg">ABOUT ABOUT ABOUT ABOUT</div>
+        <div class="about__content">
+          <article class="tile">
+            <figure class="tile__figure">
+              <img
+                src="assets/me.jpeg"
+                data-hover="assets/me.jpeg"
+                class="tile__image"
+                alt="Me"
+              />
+            </figure>
+          </article>
+          <canvas id="stage" class="js-cursor-hover"></canvas>
+
+          <!-- <div class="about__image   js-cursor-hover">
                     <img src="assets/me.jpeg" alt="me">
                 </div> -->
 
+          <div class="about__info">
+            <h3 class="about__title js-cursor-hover">ABOUT ME</h3>
+            <!-- <h3 class="about__title js-cursor-hover">HI CIO 您好 안녕 Привет</h3> -->
+            <!-- <h3 class="about__title">Hi, I am Mihail</h3> -->
+            <p class="about__text">TRAVELING SPORT PROGRAMMING & SPACE</p>
 
-                <div class="about__info">
-                    <h3 class="about__title js-cursor-hover">ABOUT ME</h3>
-                    <!-- <h3 class="about__title js-cursor-hover">HI CIO 您好 안녕 Привет</h3> -->
-                    <!-- <h3 class="about__title">Hi, I am Mihail</h3> -->
-                    <p class="about__text">TRAVELING SPORT PROGRAMMING & SPACE</p>
-
-                    <!-- <form method="get" action="assets/files/file.txt">
+            <!-- <form method="get" action="assets/files/file.txt">
                         <button type="submit">Download!</button>
                      </form> -->
-                    <a class="button about__button cv__button js-cursor-hover-download" href="./assets/files/file.txt" download="Salavatov_CV">
-                        Download CV
-                        <span>
-                            <!-- <svg class="icon download__icon">
+            <a
+              class="button about__button cv__button js-cursor-hover-download"
+              href="./assets/files/Салаватов Михаил cv.pdf"
+              download="Salavatov_CV"
+            >
+              Download CV
+              <span>
+                <!-- <svg class="icon download__icon">
                                 <use xlink:href="#download_ico"></use>
                             </svg> -->
-                            <svg class="icon download__icon">
-                                <use xlink:href="#download_button"></use>
-                            </svg>
-                        </span>
-                    </a>
+                <svg class="icon download__icon">
+                  <use xlink:href="#download_button"></use>
+                </svg>
+              </span>
+            </a>
 
-                    <div class="about__social social">
-                        <div class="social__item">
-                            <a target="_blank" rel="noopener noreferrer" href="https://www.github.com/HoboHub" class="social__link github js-cursor-hover-link">
-                                <svg class="icon  social__img">
-                                    <use xlink:href="#github"></use>
-                                </svg>
-                                <!-- <img class="social__img" src="./assets/socials/github.svg" alt="github"> -->
-                            </a>
-                        </div>
-                        <div class="social__item">
-                            <a target="_blank" rel="noopener noreferrer" href="https://www.behance.net/serpicos" class="social__link behance js-cursor-hover-link">
-                                <svg class="icon  social__img">
-                                    <use xlink:href="#behance"></use>
-                                </svg>
-                                <!-- <img class="social__img" src="./assets/socials/behance.svg" alt="behance"> -->
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <div class="about__social social">
+              <div class="social__item">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://www.github.com/HoboHub"
+                  class="social__link github js-cursor-hover-link"
+                >
+                  <svg class="icon social__img">
+                    <use xlink:href="#github"></use>
+                  </svg>
+                  <!-- <img class="social__img" src="./assets/socials/github.svg" alt="github"> -->
+                </a>
+              </div>
+              <div class="social__item">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://www.behance.net/serpicos"
+                  class="social__link behance js-cursor-hover-link"
+                >
+                  <svg class="icon social__img">
+                    <use xlink:href="#behance"></use>
+                  </svg>
+                  <!-- <img class="social__img" src="./assets/socials/behance.svg" alt="behance"> -->
+                </a>
+              </div>
             </div>
-            
-        </section>
-    
-        <section class="section section__contact panel" id="contact">
-            <h2 class="section__header contact__header">Contact me</h2>
-            <div class="contact__content">
-                <button class="contact__button button  js-cursor-hover">Let's talk</button>
-                <div class="social__item">
-                    <a target="_blank" rel="noopener noreferrer" href="https://t.me/mihail_salavatov" class="js-cursor-hover-link">
-                        <svg class="icon telegram social__img">
-                            <use xlink:href="#telegram"></use>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section__contact panel" id="contact">
+        <h2 class="section__header contact__header">Contact me</h2>
+        <div class="contact__content">
+          <a href="mailto:mihail.salavatov@mail.ru">
+            <button class="contact__button button js-cursor-hover">
+              Let's talk
+            </button>
+          </a>
+          <div class="social__item">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://t.me/mihail_slv"
+              class="js-cursor-hover-link"
+            >
+              <svg class="icon telegram social__img">
+                <use xlink:href="#telegram"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
 
     <!-- <audio id="ambient" controls autoplay> -->
     <audio id="ambient" data-playing="ambient.mp3">
-        <source src="assets/ambient.mp3" type="audio/mp3">
+      <source src="assets/ambient.mp3" type="audio/mp3" />
     </audio>
-
 
     <!-- SVG SPRITE -->
     <svg width="0" height="0" class="hidden">
-        <!-- behance svg -->
-        <symbol version="1.1" id="behance" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" xml:space="preserve" viewBox="0 0 504.4 504.4">
-            <path d="M195.2,184.2H188h-48v44h51.6c9.2,0,17.2-2.4,17.2-23.6C208.8,183.4,195.2,184.2,195.2,184.2z"></path>
-            <path d="M195.2,260.2H140v56h48.4c0.8,0,2,0,3.6,0c8,0,23.2-3.2,23.2-27.2C215.6,260.6,195.2,260.2,195.2,260.2z"></path>
-    
-            <path d="M377.6,0.2H126.4C56.8,0.2,0,57,0,126.6v251.6c0,69.2,56.8,126,126.4,126H378c69.6,0,126.4-56.8,126.4-126.4V126.6
+      <!-- behance svg -->
+      <symbol
+        version="1.1"
+        id="behance"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        xml:space="preserve"
+        viewBox="0 0 504.4 504.4"
+      >
+        <path
+          d="M195.2,184.2H188h-48v44h51.6c9.2,0,17.2-2.4,17.2-23.6C208.8,183.4,195.2,184.2,195.2,184.2z"
+        ></path>
+        <path
+          d="M195.2,260.2H140v56h48.4c0.8,0,2,0,3.6,0c8,0,23.2-3.2,23.2-27.2C215.6,260.6,195.2,260.2,195.2,260.2z"
+        ></path>
+
+        <path
+          d="M377.6,0.2H126.4C56.8,0.2,0,57,0,126.6v251.6c0,69.2,56.8,126,126.4,126H378c69.6,0,126.4-56.8,126.4-126.4V126.6
                 C504,57,447.2,0.2,377.6,0.2z M296,160.2h84v20h-84V160.2z M256.8,291.8c0,62.4-61.6,64.4-61.6,64.4h-56.8h-1.6H96v-208h40.4h1.6
                 h56.8c30.8,0,55.2,17.6,55.2,54.4c0,36.8-29.6,38.8-29.6,38.8C259.6,241,256.8,291.8,256.8,291.8z M407.6,288.2H306.4
                 c0,40,34.4,36.8,34.4,36.8c32.4,0,31.2-20.8,31.2-20.8h34.4c0,56-66.8,53.6-66.8,53.6c-80,0-74.8-78.8-74.8-78.8s0-79.2,74.8-79.2
-                C418.4,199.4,407.6,288.2,407.6,288.2z"></path>
-            <path d="M340.4,228.6c-30,0-34.4,31.6-34.4,31.6h64C370,260.2,370.4,228.6,340.4,228.6z"></path>
-        </symbol>
-    
-        <!-- github svg -->
-        <symbol version="1.1" id="github" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" xml:space="preserve" viewBox="0 0 438.536 438.536">
-            <path d="M158.173,352.599c-3.049,0.568-4.381,1.999-3.999,4.281c0.38,2.283,2.093,3.046,5.138,2.283
-                c3.049-0.76,4.38-2.095,3.997-3.997C162.931,353.074,161.218,352.216,158.173,352.599z"></path>
-            <path d="M141.898,354.885c-3.046,0-4.568,1.041-4.568,3.139c0,2.474,1.619,3.518,4.853,3.138c3.046,0,4.57-1.047,4.57-3.138
-                C146.753,355.553,145.134,354.502,141.898,354.885z"></path>
-            <path d="M119.629,354.022c-0.76,2.095,0.478,3.519,3.711,4.284c2.855,1.137,4.664,0.568,5.424-1.714
-                c0.572-2.091-0.666-3.61-3.711-4.568C122.197,351.265,120.39,351.922,119.629,354.022z"></path>
-            <path d="M414.41,24.123C398.326,8.042,378.964,0,356.309,0H82.225C59.577,0,40.208,8.042,24.123,24.123
+                C418.4,199.4,407.6,288.2,407.6,288.2z"
+        ></path>
+        <path
+          d="M340.4,228.6c-30,0-34.4,31.6-34.4,31.6h64C370,260.2,370.4,228.6,340.4,228.6z"
+        ></path>
+      </symbol>
+
+      <!-- github svg -->
+      <symbol
+        version="1.1"
+        id="github"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        xml:space="preserve"
+        viewBox="0 0 438.536 438.536"
+      >
+        <path
+          d="M158.173,352.599c-3.049,0.568-4.381,1.999-3.999,4.281c0.38,2.283,2.093,3.046,5.138,2.283
+                c3.049-0.76,4.38-2.095,3.997-3.997C162.931,353.074,161.218,352.216,158.173,352.599z"
+        ></path>
+        <path
+          d="M141.898,354.885c-3.046,0-4.568,1.041-4.568,3.139c0,2.474,1.619,3.518,4.853,3.138c3.046,0,4.57-1.047,4.57-3.138
+                C146.753,355.553,145.134,354.502,141.898,354.885z"
+        ></path>
+        <path
+          d="M119.629,354.022c-0.76,2.095,0.478,3.519,3.711,4.284c2.855,1.137,4.664,0.568,5.424-1.714
+                c0.572-2.091-0.666-3.61-3.711-4.568C122.197,351.265,120.39,351.922,119.629,354.022z"
+        ></path>
+        <path
+          d="M414.41,24.123C398.326,8.042,378.964,0,356.309,0H82.225C59.577,0,40.208,8.042,24.123,24.123
                 C8.042,40.207,0,59.576,0,82.225v274.088c0,22.65,8.042,42.017,24.123,58.098c16.084,16.084,35.454,24.126,58.102,24.126h63.953
                 c4.184,0,7.327-0.144,9.42-0.424c2.092-0.288,4.184-1.526,6.279-3.717c2.096-2.187,3.14-5.376,3.14-9.562
                 c0-0.568-0.05-7.046-0.144-19.417c-0.097-12.375-0.144-22.176-0.144-29.41l-6.567,1.143c-4.187,0.76-9.469,1.095-15.846,0.999
@@ -190,51 +805,157 @@
                 c-9.232,5.137-18.178,8.853-26.84,11.132c-8.661,2.286-18.414,4.004-29.263,5.147c9.891,8.562,14.839,22.072,14.839,40.538v68.238
                 c0,3.237,0.472,5.852,1.424,7.851c0.958,1.998,2.478,3.374,4.571,4.141c2.102,0.76,3.949,1.235,5.571,1.424
                 c1.622,0.191,3.949,0.287,6.995,0.287h63.953c22.648,0,42.018-8.042,58.095-24.126c16.084-16.084,24.126-35.454,24.126-58.102
-                V82.225C438.533,59.576,430.491,40.204,414.41,24.123z"></path>
-            <path d="M86.793,319.195c-1.331,0.948-1.141,2.471,0.572,4.565c1.906,1.902,3.427,2.189,4.57,0.855
-                c1.331-0.948,1.141-2.471-0.575-4.569C89.458,318.336,87.936,318.049,86.793,319.195z"></path>
-            <path d="M77.374,312.057c-0.57,1.335,0.096,2.478,1.999,3.426c1.521,0.955,2.762,0.767,3.711-0.568
-                c0.57-1.335-0.096-2.478-1.999-3.433C79.182,310.91,77.945,311.102,77.374,312.057z"></path>
-            <path d="M95.646,330.331c-1.715,0.948-1.715,2.666,0,5.137c1.713,2.478,3.328,3.142,4.853,1.998c1.714-1.334,1.714-3.142,0-5.427
-                C98.978,329.571,97.359,328.993,95.646,330.331z"></path>
-            <path d="M105.641,343.174c-1.714,1.526-1.336,3.327,1.142,5.428c2.281,2.279,4.185,2.566,5.708,0.849
-                c1.524-1.519,1.143-3.326-1.142-5.42C109.068,341.751,107.164,341.463,105.641,343.174z"></path>
-        </symbol>
+                V82.225C438.533,59.576,430.491,40.204,414.41,24.123z"
+        ></path>
+        <path
+          d="M86.793,319.195c-1.331,0.948-1.141,2.471,0.572,4.565c1.906,1.902,3.427,2.189,4.57,0.855
+                c1.331-0.948,1.141-2.471-0.575-4.569C89.458,318.336,87.936,318.049,86.793,319.195z"
+        ></path>
+        <path
+          d="M77.374,312.057c-0.57,1.335,0.096,2.478,1.999,3.426c1.521,0.955,2.762,0.767,3.711-0.568
+                c0.57-1.335-0.096-2.478-1.999-3.433C79.182,310.91,77.945,311.102,77.374,312.057z"
+        ></path>
+        <path
+          d="M95.646,330.331c-1.715,0.948-1.715,2.666,0,5.137c1.713,2.478,3.328,3.142,4.853,1.998c1.714-1.334,1.714-3.142,0-5.427
+                C98.978,329.571,97.359,328.993,95.646,330.331z"
+        ></path>
+        <path
+          d="M105.641,343.174c-1.714,1.526-1.336,3.327,1.142,5.428c2.281,2.279,4.185,2.566,5.708,0.849
+                c1.524-1.519,1.143-3.326-1.142-5.42C109.068,341.751,107.164,341.463,105.641,343.174z"
+        ></path>
+      </symbol>
 
-        <!-- right arrow svg -->
-        <symbol id="right-arrow" enable-background="new 0 0 64 64" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-            <path d="m37.379 12.552c-.799-.761-2.066-.731-2.827.069-.762.8-.73 2.066.069 2.828l15.342 14.551h-39.963c-1.104 0-2 .896-2 2s.896 2 2 2h39.899l-15.278 14.552c-.8.762-.831 2.028-.069 2.828.393.412.92.62 1.448.62.496 0 .992-.183 1.379-.552l17.449-16.62c.756-.755 1.172-1.759 1.172-2.828s-.416-2.073-1.207-2.862z"></path>
-        </symbol>
+      <!-- right arrow svg -->
+      <symbol
+        id="right-arrow"
+        enable-background="new 0 0 64 64"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 64 64"
+      >
+        <path
+          d="m37.379 12.552c-.799-.761-2.066-.731-2.827.069-.762.8-.73 2.066.069 2.828l15.342 14.551h-39.963c-1.104 0-2 .896-2 2s.896 2 2 2h39.899l-15.278 14.552c-.8.762-.831 2.028-.069 2.828.393.412.92.62 1.448.62.496 0 .992-.183 1.379-.552l17.449-16.62c.756-.755 1.172-1.759 1.172-2.828s-.416-2.073-1.207-2.862z"
+        ></path>
+      </symbol>
 
-        <symbol version="1.1" id="right-chevron" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" xml:space="preserve" viewBox="0 0 256 256">
-            <polygon points="79.093,0 48.907,30.187 146.72,128 48.907,225.813 79.093,256 207.093,128"></polygon>
-        </symbol>
+      <symbol
+        version="1.1"
+        id="right-chevron"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        xml:space="preserve"
+        viewBox="0 0 256 256"
+      >
+        <polygon
+          points="79.093,0 48.907,30.187 146.72,128 48.907,225.813 79.093,256 207.093,128"
+        ></polygon>
+      </symbol>
 
-        <!-- <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="download_ico">
+      <!-- <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="download_ico">
             <path d="m409.785156 278.5-153.785156 153.785156-153.785156-153.785156 28.285156-28.285156 105.5 105.5v-355.714844h40v355.714844l105.5-105.5zm102.214844 193.5h-512v40h512zm0 0"></path>
         </symbol> -->
 
-        <!-- download svg -->
-        <symbol version="1.1" id="download_button" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" xml:space="preserve" viewBox="0 0 29.978 29.978">
-            <path d="M25.462,19.105v6.848H4.515v-6.848H0.489v8.861c0,1.111,0.9,2.012,2.016,2.012h24.967c1.115,0,2.016-0.9,2.016-2.012
-                v-8.861H25.462z"></path>
-            <path d="M14.62,18.426l-5.764-6.965c0,0-0.877-0.828,0.074-0.828s3.248,0,3.248,0s0-0.557,0-1.416c0-2.449,0-6.906,0-8.723
+      <!-- download svg -->
+      <symbol
+        version="1.1"
+        id="download_button"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        xml:space="preserve"
+        viewBox="0 0 29.978 29.978"
+      >
+        <path
+          d="M25.462,19.105v6.848H4.515v-6.848H0.489v8.861c0,1.111,0.9,2.012,2.016,2.012h24.967c1.115,0,2.016-0.9,2.016-2.012
+                v-8.861H25.462z"
+        ></path>
+        <path
+          d="M14.62,18.426l-5.764-6.965c0,0-0.877-0.828,0.074-0.828s3.248,0,3.248,0s0-0.557,0-1.416c0-2.449,0-6.906,0-8.723
                 c0,0-0.129-0.494,0.615-0.494c0.75,0,4.035,0,4.572,0c0.536,0,0.524,0.416,0.524,0.416c0,1.762,0,6.373,0,8.742
                 c0,0.768,0,1.266,0,1.266s1.842,0,2.998,0c1.154,0,0.285,0.867,0.285,0.867s-4.904,6.51-5.588,7.193
-                C15.092,18.979,14.62,18.426,14.62,18.426z"></path>
-        </symbol>
+                C15.092,18.979,14.62,18.426,14.62,18.426z"
+        ></path>
+      </symbol>
 
-        <!-- file svg -->
-        <symbol version="1.1" id="files" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" xml:space="preserve" viewBox="0 0 512 512">
-            <path d="M459.36,100.64l-96-96C360.341,1.645,356.253-0.024,352,0H96c-26.51,0-48,21.49-48,48v416c0,26.51,21.49,48,48,48h320
+      <!-- file svg -->
+      <symbol
+        version="1.1"
+        id="files"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        xml:space="preserve"
+        viewBox="0 0 512 512"
+      >
+        <path
+          d="M459.36,100.64l-96-96C360.341,1.645,356.253-0.024,352,0H96c-26.51,0-48,21.49-48,48v416c0,26.51,21.49,48,48,48h320
             c26.51,0,48-21.49,48-48V112C464.025,107.747,462.355,103.66,459.36,100.64z M432,464c0,8.837-7.163,16-16,16H96
-            c-8.837,0-16-7.163-16-16V48c0-8.837,7.163-16,16-16h240v64c0,17.673,14.327,32,32,32h64V464z"></path>
-        </symbol>
+            c-8.837,0-16-7.163-16-16V48c0-8.837,7.163-16,16-16h240v64c0,17.673,14.327,32,32,32h64V464z"
+        ></path>
+      </symbol>
 
-        <!-- telegram svg -->
-        <symbol xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="telegram" x="0px" y="0px" xml:space="preserve" viewBox="0 0 512.004 512.004">
-            <path d="M508.194,20.517c-4.43-4.96-11.42-6.29-17.21-3.76l-482,211c-5.34,2.34-8.85,7.57-8.98,13.41  c-0.13,5.83,3.14,11.21,8.38,13.79l115.09,56.6l28.68,172.06c0.93,6.53,6.06,11.78,12.74,12.73c4.8,0.69,9.57-1,12.87-4.4  l90.86-90.86l129.66,92.62c4.16,2.96,9.52,3.61,14.24,1.74c4.73-1.87,8.19-6.02,9.19-11.01l90-451  C512.604,28.967,511.454,24.177,508.194,20.517z M135.354,283.967l-84.75-41.68l334.82-146.57L135.354,283.967z M182.294,328.557  l-13.95,69.75l-15.05-90.3l183.97-138.49l-150.88,151.39C184.264,323.027,182.854,325.787,182.294,328.557z M191.424,435.857  l15.74-78.67l36.71,26.22L191.424,435.857z M396.834,455.797l-176.73-126.23l252.47-253.31L396.834,455.797z"></path>
-        </symbol>
+      <!-- telegram svg -->
+      <symbol
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        version="1.1"
+        id="telegram"
+        x="0px"
+        y="0px"
+        xml:space="preserve"
+        viewBox="0 0 512.004 512.004"
+      >
+        <path
+          d="M508.194,20.517c-4.43-4.96-11.42-6.29-17.21-3.76l-482,211c-5.34,2.34-8.85,7.57-8.98,13.41  c-0.13,5.83,3.14,11.21,8.38,13.79l115.09,56.6l28.68,172.06c0.93,6.53,6.06,11.78,12.74,12.73c4.8,0.69,9.57-1,12.87-4.4  l90.86-90.86l129.66,92.62c4.16,2.96,9.52,3.61,14.24,1.74c4.73-1.87,8.19-6.02,9.19-11.01l90-451  C512.604,28.967,511.454,24.177,508.194,20.517z M135.354,283.967l-84.75-41.68l334.82-146.57L135.354,283.967z M182.294,328.557  l-13.95,69.75l-15.05-90.3l183.97-138.49l-150.88,151.39C184.264,323.027,182.854,325.787,182.294,328.557z M191.424,435.857  l15.74-78.67l36.71,26.22L191.424,435.857z M396.834,455.797l-176.73-126.23l252.47-253.31L396.834,455.797z"
+        ></path>
+      </symbol>
+
+      <!-- folder svg -->
+      <symbol
+        id="folder"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 6.472C3 6.162 3.072 5.855 3.211 5.578L4 4H9L10 6H20C20.552 6 21 6.448 21 7V9V19C21 19.552 20.552 20 20 20H4C3.448 20 3 19.552 3 19V9V6.472Z"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M4 20H20C20.552 20 21 19.552 21 19V11C21 9.895 20.105 9 19 9H5C3.895 9 3 9.895 3 11V19C3 19.552 3.448 20 4 20Z"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+
+      <!-- document svg -->
+      <symbol
+        id="document"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M21 9V7C21 6.448 20.552 6 20 6H10L9 4H4L3.211 5.578C3.072 5.855 3 6.162 3 6.472V9"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M3.913 20H20.087C20.604 20 21.036 19.606 21.083 19.09L21.901 10.09C21.954 9.505 21.493 9 20.905 9H3.095C2.507 9 2.046 9.505 2.099 10.09L2.917 19.09C2.964 19.606 3.396 20 3.913 20Z"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
     </svg>
     <!-- END OF SVG SPRITE -->
 
@@ -243,6 +964,9 @@
     <!-- <script type="module" src="fadeIn.js"></script> -->
     <script type="module" src="text_appears.js"></script>
 
+    <!-- функция открытия папок -->
+    <script type="module" src="toggleLinks.js"></script>
+
     <script src="customCursor.js"></script>
 
     <script src="play.js"></script>
@@ -250,5 +974,5 @@
     <script type="module" src="anchorLinks.js"></script>
 
     <script src="changeAudio.js"></script>
-</body>
+  </body>
 </html>
