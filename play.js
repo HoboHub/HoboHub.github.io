@@ -1,24 +1,24 @@
-let playBtn = document.getElementById('js-play-btn');
+let playBtn = document.getElementById("js-play-btn");
 
-let mainSong = document.getElementById('ambient');
+let mainSong = document.getElementById("ambient");
 
-playBtn.addEventListener('click', () => {
-    let bars = document.getElementsByClassName('bar');
+playBtn.addEventListener("click", () => {
+  let bars = document.getElementsByClassName("bar");
 
-    playBtn.classList.toggle('stopped')
-    for(let i=0; i<5; i++) {
-        if (!playBtn.classList.contains('stopped')) {
-            bars[i].style.animation = '';
-            
-            mainSong.play();
-        } else {
-            bars[i].style.height = '2px';
-            bars[i].style.animation = "none";
-            bars[i].style.webkitAnimation = "none";
+  playBtn.classList.toggle("stopped");
+  for (let i = 0; i < 5; i++) {
+    if (!playBtn.classList.contains("stopped")) {
+      bars[i].style.animation = "";
 
-            mainSong.pause();
-        }
+      mainSong.play();
+    } else {
+      bars[i].style.height = "2px";
+      bars[i].style.animation = "none";
+      bars[i].style.webkitAnimation = "none";
+
+      mainSong.pause();
     }
+  }
 });
 
 // setTimeout(() => {
@@ -31,10 +31,12 @@ playBtn.addEventListener('click', () => {
 //     mainSong.play();
 // }
 
-window.addEventListener('DOMContentLoaded', event => {
-    // mainSong.volume = 0.5;
-    mainSong.play();
-})
+window.addEventListener("DOMContentLoaded", (event) => {
+  mainSong.src = "assets/blues.mp3";
+  mainSong.volume = 0.05;
+  mainSong.currentTime = 0;
+  mainSong.play();
+});
 
 // document.onreadystatechange = function() {
 //     if (document.readyState === 'complete') {
