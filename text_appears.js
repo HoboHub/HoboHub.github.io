@@ -49,10 +49,13 @@ for (var i = 0; i < appearingTexts.length; i++) {
 
       //show mouse icon
       let scrollIcon = document.getElementById('js-scroll-downs');
-      // scrollIcon.classList.add('visible');
-      setTimeout(() => {
-        scrollIcon.classList.add('visible');
-      }, 2500);
+      if (window.matchMedia('(max-width: 768px)').matches) {
+        scrollIcon.style.display = 'none';
+      } else {
+        setTimeout(() => {
+          scrollIcon.classList.add('visible');
+        }, 2500);
+      }
 
       //text glitch appearance
       function glitching() {
