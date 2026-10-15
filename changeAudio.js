@@ -56,7 +56,7 @@ window.addEventListener("scroll", function () {
   if (!audio || (playBtn && playBtn.classList.contains("stopped"))) return;
 
   if (elementInViewport(about)) {
-    setTrack("berry.mp3", 1);
+    setTrack("two.mp3", 1);
   } else {
     setTrack("blues.mp3", 0.05);
   }
