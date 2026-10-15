@@ -208,15 +208,19 @@
         </div>
 
         <div class="about__content">
-          <article class="tile">
-            <figure class="tile__figure">
-              <img
-                src="assets/me_3.png"
-                data-hover="assets/me.jpeg"
-                class="tile__image"
-                alt="Me"
-              />
-            </figure>
+          <article class="tile" aria-label="About portrait">
+            <div class="tile__flipper">
+              <figure class="tile__face tile__face--front">
+                <img src="assets/me_3.png" class="tile__image" alt="Me" />
+              </figure>
+              <figure class="tile__face tile__face--back">
+                <img
+                  src="assets/images/ham2.jpg"
+                  class="tile__image"
+                  alt="Me alternate"
+                />
+              </figure>
+            </div>
           </article>
           <canvas id="stage" class="js-cursor-hover"></canvas>
 
