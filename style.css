@@ -284,7 +284,7 @@ a {
 .header__mnu {
   position: relative; /*нужно чтобы клики проходили поверх canvas*/
   display: flex !important;
-  opacity: 0;
+  opacity: 1;
   height: 5em;
   align-items: center;
   justify-content: flex-end;
