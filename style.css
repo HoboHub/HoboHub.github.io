@@ -966,6 +966,13 @@ a {
 .contact__content > .social__item {
   width: 40px;
 }
+
+.contact__content > .social_items_wrapper {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
 /*  */
 
 /*  */
